@@ -21,7 +21,7 @@ html {
 
 .carousel {
     position: relative;
-    width: 600px;
+    width: 70%;
     margin: auto;
     overflow: hidden;
 }

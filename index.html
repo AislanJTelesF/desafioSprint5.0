@@ -34,9 +34,9 @@
     <main>
         <div id="carousel" class="carousel">
             <div class="carousel__slide">
-                <img id="carousel__imagem1" src="img/imagem_1.jpg" alt="">
-                <img id="carousel__imagem2" src="img/imagem_2.jpg" alt="">
-                <img id="carousel__imagem3" src="img/imagem_3.jpg" alt="">
+                <img id="carousel__imagem" src="img/imagem_1.jpg" src="img/imagem_2.jpg" src="img/imagem_3.jpg" alt="">
+                <!-- <img id="carousel__imagem2"  alt="">
+                <img id="carousel__imagem3"  alt=""> -->
 
                 <div class="carousel__legenda">
                     <p id="carousel__paragrafo">Texto meramente ilustrativo para ver como ele se encontra na página</p>
@@ -50,9 +50,9 @@
         </div>
         <script>
             //insert each image on carousel
-            carouselArr.push(new Carousel("imagem_1.jpg", "Esta é a nova Ranger Ford 2022. Verifique novidades.", "lancamento.html"));
-            carouselArr.push(new Carousel("imagem_2.jpg", "Ford a nossa história", "#"));
-            carouselArr.push(new Carousel("imagem_3.jpg", "Nova Ford Bronco Sport 2022", "lancamento.html"));
+            carouselArr.push(new Carousel("img/imagem_1.jpg", "Esta é a nova Ranger Ford 2022. Verifique novidades.", "lancamento.html"));
+            carouselArr.push(new Carousel("img/imagem_2.jpg", "Ford a nossa história", "#"));
+            carouselArr.push(new Carousel("img/imagem_3.jpg", "Nova Ford Bronco Sport 2022", "lancamento.html"));
             Carousel.Start(carouselArr);
         </script>
     </main>

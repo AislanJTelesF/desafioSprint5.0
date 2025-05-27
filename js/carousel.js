@@ -32,14 +32,14 @@ class Carousel {
 };
 
 //Array storage class
-let carouselArr = [];
+const carouselArr = [];
 
 
 let currentIndex = 0;
 
 function mostrarSlide(index) {
     const item = carouselArr[index];
-    document.getElementById('carousel__imagem1', 'carousel__imagem2', 'carousel__imagem3').src = item.imagem;
+    document.getElementById('carousel__imagem').src = item.imagem; 
     document.getElementById('carousel__paragrafo').innerText = item.texto;
     document.getElementById('carousel__link').href = item.link;
 }
@@ -57,5 +57,4 @@ function slideAnterior() {
 window.onload = () => {
     mostrarSlide(currentIndex);
     setInterval(nextSlide, 2000); // mudar a cada 2 segundos
-
 };
