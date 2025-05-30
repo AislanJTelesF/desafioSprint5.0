@@ -31,14 +31,12 @@ function GetCarArrPosition(arr, carClass) {
 function SetCarToCompare(el, carClass) {
     if(carClass instanceof Car){       
         if(el.checked){
-            if(GetCarArrPosition(carArr, carClass) === -1){
                 if(carArr.length >= 2){
                     alert("Você só pode comparar 2 carros.");
                     el.checked = false;
                     return;
                 }
                 carArr.push(carClass);
-            }
         } else {
             const pos = GetCarArrPosition(carArr, carClass);
             if(pos !== -1){
@@ -59,47 +57,33 @@ function ShowCompare() {
 
     UpdateCompareTable();
     document.getElementById("compare").style.display = "block";
+    
 }
+
 
 function HideCompare(){
     document.getElementById("compare").style.display = "none"; 
 }
 
 function UpdateCompareTable() {
-    const car1 = carArr[0];
-    const car2 = carArr[1];
+    const car0 = carArr[0];
+    const car1 = carArr[1];
 
-    document.getElementById('car1Name').innerText = car1.nome;
-    document.getElementById('car2Name').innerText = car2.nome;
+    function setCompare(campo, valor0, valor1) {
+        document.getElementById(`compare_${campo}_0`).innerHTML = valor0;
+        document.getElementById(`compare_${campo}_1`).innerHTML = valor1;
+    }
 
-    document.getElementById('car1Preco').innerText = "R$ " + car1.preco.toLocalString();
-    document.getElementById('car2Preco').innerText = "R$ " + car2.preco.toLocalString();
-
-    document.getElementById('car1AltCacamba').innerText = car1.alturaCacamba + " mm";
-    document.getElementById('car2AltCacamba').innerText = car2.alturaCacamba + " mm";
-
-    document.getElementById('car1AltVeiculo').innerText = car1.alturaVeiculo + " mm";
-    document.getElementById('car2AltVeiculo').innerText = car2.alturaVeiculo + " mm";
-
-    document.getElementById('car1AltSolo').innerText = car1.alturaSolo + " mm";
-    document.getElementById('car2AltSolo').innerText = car2.alturaSolo + " mm";
-
-    document.getElementById('car1CapCarga').innerText = car1.capacidadeCarga + " kg";
-    document.getElementById('car2CapCarga').innerText = car2.capacidadeCarga + " kg";
-
-    document.getElementById('car1Motor').innerText = car1.motor + " L";
-    document.getElementById('car2Motor').innerText = car2.motor + " L";
-
-    document.getElementById('car1Potencia').innerText = car1.potencia + " cv";
-    document.getElementById('car2Potencia').innerText = car2.potencia + " cv";
-
-    document.getElementById('car1VolCacamba').innerText = car1.volumeCacamba + " L";
-    document.getElementById('car2VolCacamba').innerText = car2.volumeCacamba + " L";
-
-    document.getElementById('car1Roda').innerText = car1.roda;
-    document.getElementById('car2Roda').innerText = car2.roda;
-
-    document.getElementById('car1Image').src = car1.image;
-    document.getElementById('car2Image').src = car2.image;
-
+    setCompare('modelo', car0.nome, car1.nome);
+    setCompare('preco', `R$ ${car0.preco.toLocaleString('pt-br')}`, `R$ ${car1.preco.toLocaleString('pt-br')}`);
+    setCompare('alturacacamba', car0.alturaCacamba + 'mm', car1.alturaCacamba + 'mm');
+    setCompare('alturaveiculo', car0.alturaVeiculo + 'mm', car1.alturaVeiculo + 'mm');
+    setCompare('alturasolo', car0.alturaSolo + 'mm', car1.alturaSolo + 'mm');
+    setCompare('capacidadecarga', car0.capacidadeCarga + 'Kg', car1.capacidadeCarga + 'Kg');
+    setCompare('motor', car0.motor + 'L', car1.motor + 'L');
+    setCompare('potencia', car0.potencia + 'cv', car1.potencia + 'cv');
+    setCompare('volumecacamba', car0.volumeCacamba + 'L', car1.volumeCacamba + 'L');
+    setCompare('roda', car0.roda, car1.roda);
+    setCompare('image', `<img src="${car0.image}" width="200">`, `<img src="${car1.image}" width="200">`);
+    
 }
