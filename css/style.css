@@ -165,10 +165,12 @@ footer div {
 
 button:hover {
     background: #1b357e;
+    font-size: 1rem;
 }
 button {
     background: #1351d8;
     color: #fff;
     border: 0px;
     border-radius: 10px;
+    transition: all 0.3s ease;
 }
