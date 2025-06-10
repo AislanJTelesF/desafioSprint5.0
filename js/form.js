@@ -25,3 +25,14 @@ function Enviar() {
     }
 
 }
+
+function acessarBotao() {
+    const checkbox = document.getElementById("termosCondicoes");
+    const button = document.getElementById("enviarButao");
+    
+    function verificarBotao() {
+        button.disabled =!checkbox.checked;
+    }
+
+    verificarBotao();
+}
