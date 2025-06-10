@@ -1,29 +1,30 @@
 
 //class contato
 
-class contato {
-    
+class Contato {
+    constructor(nome, sobrenome, email, cpf, telefone, tipoContato) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.email = email;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.tipoContato = tipoContato;
+    }
 }
 
 function Post(form) {
+    const nome = form.elements.namedItem("nome").value;
+    const sobrenome = form.elements.namedItem("sobrenome").value;
+    const email = form.elements.namedItem("email").value;
+    const cpf = form.elements.namedItem("cpf").value;
+    const telefone = form.elements.namedItem("telefone").value;
+    const tipoContato = form.elements.namedItem("contato").value;
 
-  let data = new contato(form.elements.namedItem("nome").value,
-            form.elements.namedItem("sobrenome").value, 
-            form.elements.namedItem("email").value, 
-            form.elements.namedItem("cpf").value, 
-            form.elements.namedItem("telefone").value, 
-            form.elements.namedItem("contato").value);
-  
-}
+    const novoContato = new Contato(nome, sobrenome, email, cpf, telefone, tipoContato);
 
-function Enviar() {
+    alert(`Obrigado sr(a) ${nome}! Os seus dados foram encaminhados com sucesso.`);
 
-    var nome = document.getElementById("nomeid");
-
-    if (nome.value != "") {
-        alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso');
-    }
-
+<<<<<<< HEAD
 }
 
 function acessarBotao() {
@@ -35,4 +36,7 @@ function acessarBotao() {
     }
 
     verificarBotao();
+=======
+    form.reset();
+>>>>>>> 11cac97d3c9eb9696587a5e182834438a85100ea
 }
