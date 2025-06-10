@@ -23,8 +23,6 @@ function Post(form) {
     const novoContato = new Contato(nome, sobrenome, email, cpf, telefone, tipoContato);
 
     alert(`Obrigado sr(a) ${nome}! Os seus dados foram encaminhados com sucesso.`);
-
-<<<<<<< HEAD
 }
 
 function acessarBotao() {
@@ -36,7 +34,5 @@ function acessarBotao() {
     }
 
     verificarBotao();
-=======
     form.reset();
->>>>>>> 11cac97d3c9eb9696587a5e182834438a85100ea
 }
